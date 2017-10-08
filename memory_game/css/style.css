@@ -1,3 +1,21 @@
+td{
+	border: 1px solid black;
+}
+
+table{
+	text-align: center;
+    margin: 0 auto;
+}
+
+
+tr{
+	background:white;
+}
+
+.current-player{
+background:yellow;
+}
+
 
 header{
 	background-color:#F15B31;
