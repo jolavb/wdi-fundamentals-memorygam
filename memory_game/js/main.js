@@ -29,6 +29,16 @@ var checkForMatch = function(){
 	else{
 		alert("Sorry try again!");
 	}
+	reset();
+}
+
+var reset = function(){
+	cardsInPlay = [];
+	var gameboard = document.getElementById('gameboard');
+	while (gameboard.hasChildNodes()){
+		gameboard.removeChild(gameboard.lastChild)
+	};
+	createBoard();
 }
 
 
@@ -42,12 +52,14 @@ var flipCard = function(){
 }
 
 
+
 var createBoard = function(){
-	for(i=0;i<=cards.length -1;i++){
+	for(i=0;i<=cards.length -1;i++){		
 		var cardElement = document.createElement('img');
 		cardElement.setAttribute('src','images/back.png');
 		cardElement.setAttribute('data-id',i);
 		cardElement.addEventListener('click', flipCard);
+		document.getElementById('reset').addEventListener('click',reset);
 		document.getElementById('gameboard').appendChild(cardElement);
 	}
 
