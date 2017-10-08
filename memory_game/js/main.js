@@ -157,7 +157,7 @@ var createPlayers = function(){
 	players = [];
 	var numPlayers = document.getElementById('players').value;
 	var playerTable = document.getElementById('player-table');
-	playerTable.innerHTML = "<tr><th>Player</th><th>Current Score</th><th>Turn</th></tr>"
+	playerTable.innerHTML = "<tr><th>Player</th><th>Current Score</th><th>Turns Taken</th></tr>"
 
 	for(i=1;i<=numPlayers;i++){
 		var newPlayer = new player();
