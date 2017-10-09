@@ -126,14 +126,19 @@ while (gameboard.hasChildNodes()){
 
 
 
-
 var flipCard = function(){
 	var cardId = this.getAttribute('data-id');
-	cardsInPlay.push(cards[cardId].rank);
+	cardsInPlay.push(cards[cardId]);
 	this.setAttribute('src',cards[cardId].cardImage);
 	if (cardsInPlay.length === 2){
-	checkForMatch(checkTurn());
-	};
+		if (cardsInPlay[0].cardImage === cardsInPlay[1].cardImage){
+			alert("You've already selected this card!");
+			cardsInPlay.pop();
+		} 
+		else{
+			checkForMatch(checkTurn());
+		}
+	}
 }
 
 
