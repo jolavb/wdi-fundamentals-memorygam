@@ -104,6 +104,7 @@ var resetAll = function(){
 	createBoard();
 	createPlayers();
 	createTurns();
+	shuffleDeck();
 }
 
 
@@ -111,6 +112,7 @@ var resetTurn = function(){
 cardsInPlay = [];
 clearBoard();
 createBoard();
+shuffleDeck();
 }
 
 
@@ -137,6 +139,14 @@ var flipCard = function(){
 var checkTurn = function(){
 	turns += 1;
 	return players[playerTurnIndex[(turns)]];
+}
+
+
+var shuffleDeck = function(){
+	var board = document.querySelector('#gameboard');
+	for (var i = board.children.length; i >= 0; i--) {
+	    board.appendChild(board.children[Math.random() * i | 0]);
+	}
 }
 
 
@@ -209,8 +219,12 @@ var createTurns = function(){
 
 
 
+
 createTurns();
 resetAll();
+
+
+
 
 
 
