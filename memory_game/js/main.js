@@ -60,6 +60,7 @@ var checkForMatch = function(player){
 	}
 }
 
+
 var findWinner = function(){
 	var maxScore;
 	var scores = [];
